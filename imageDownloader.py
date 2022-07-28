@@ -8,6 +8,6 @@ class imageDownloader():
     def download_image(self, url):
         img_data = requests.get(url).content
         if not os.path.exists('tmp'): os.makedirs('tmp')
-        with open('tmp/image_name.jpg', 'wb') as handler:
+        with open('tmp/banner.jpg', 'wb') as handler:
             handler.write(img_data)
         

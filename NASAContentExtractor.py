@@ -1,4 +1,9 @@
 import requests
+import configparser
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+api_key = config['nasa']['api_key']
 
 class Content():
     def __init__(self, title = None, copyright = None, imageURL = None):
@@ -11,7 +16,7 @@ class NASAContentExtractor():
         pass
 
     def get_content(self):
-        json = requests.get('https://api.nasa.gov/planetary/apod?api_key=fa1X4GIO4HhAn3r1k28nR18Kt8Yd5hU44JWM9Suc').json()
+        json = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={api_key}').json()
         
         title = json['title']
         copyright = json['copyright']

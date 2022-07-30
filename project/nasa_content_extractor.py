@@ -17,10 +17,11 @@ class NASAContentExtractor():
 
     def get_content(self):
         json = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={api_key}').json()
-        
+        if json['media_type'] != 'image':
+            return None
+
         title = json['title']
         copyright = json['copyright']
         imageURL = json['hdurl']
-
         content = Content(title, copyright, imageURL)
         return content

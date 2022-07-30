@@ -22,6 +22,7 @@ class App():
 
     def update_profile(self):
         content = self.content_extractor.get_content()
+        if not content: return
         self.image_downloader.download_image(content.imageURL)
 
         text = f'Banner photo: {content.title}\nCopyright: {content.copyright}\nfrom: https://apod.nasa.gov/apod/astropix.html'

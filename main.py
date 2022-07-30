@@ -1,6 +1,4 @@
-from project.app import App
-from project.image_downloader import imageDownloader
-from project.nasa_content_extractor import NASAContentExtractor
+from project import App, imageDownloader, NASAContentExtractor
 
 if __name__ == "__main__":
     content_extractor = NASAContentExtractor()

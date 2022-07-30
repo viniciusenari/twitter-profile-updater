@@ -1,9 +1,9 @@
 import requests
-import configparser
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
-config = configparser.ConfigParser()
-config.read('config.ini')
-api_key = config['nasa']['api_key']
+api_key = os.getenv('NASA_API_KEY')
 
 class Content():
     def __init__(self, title = None, copyright = None, imageURL = None):

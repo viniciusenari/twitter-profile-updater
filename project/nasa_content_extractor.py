@@ -6,9 +6,8 @@ load_dotenv()
 api_key = os.getenv('NASA_API_KEY')
 
 class Content():
-    def __init__(self, title = None, copyright = None, imageURL = None):
+    def __init__(self, title = None, imageURL = None):
         self.title = title
-        self.copyright = copyright
         self.imageURL = imageURL
 
 class NASAContentExtractor():
@@ -21,7 +20,6 @@ class NASAContentExtractor():
             return None
 
         title = json['title']
-        copyright = json['copyright']
         imageURL = json['hdurl']
-        content = Content(title, copyright, imageURL)
+        content = Content(title, imageURL)
         return content

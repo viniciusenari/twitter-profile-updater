@@ -24,6 +24,6 @@ class App():
         if not content: return
         self.image_downloader.download_image(content.imageURL)
 
-        text = f'Banner photo: {content.title}\nCopyright: {content.copyright}\nfrom: https://apod.nasa.gov/apod/astropix.html'
+        text = f'Banner photo: {content.title}\nfrom: https://apod.nasa.gov/apod/astropix.html'
         self.api.update_profile_banner(filename = 'tmp/banner.jpg')
         self.api.update_profile(description = text)

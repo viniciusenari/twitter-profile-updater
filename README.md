@@ -20,7 +20,7 @@ Activate your virtual environment. On Windows:
 your-env\Scripts\activate.bat
 ```
 
-On Unix or MacOS:
+On Linux or MacOS:
 ```
 source your-env/bin/activate
 ```
